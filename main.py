@@ -1,7 +1,3 @@
-"""Raspberry Pi project SAS
-
-Partie Raspberry du projet S.A.S. en python.
-"""
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
 import os, sys, time, fcntl, serial
