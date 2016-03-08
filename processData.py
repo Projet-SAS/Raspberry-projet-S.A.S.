@@ -1,3 +1,8 @@
+
+"""processData
+
+take data & process it
+"""
 def processData(Input):
 	print("[process] input : " + str(Input))
 	dataIn = Input.split('_')
