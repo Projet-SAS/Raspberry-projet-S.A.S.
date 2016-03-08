@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 
 """processData
 
@@ -10,4 +12,14 @@ def processData(Input):
 	temp = float(dataIn[0])
 	global lum
 	lum = float(dataIn[1])
+	pass
+
+def logData(logType, logMsg, logBroadcast):
+	logPack = "[" + str(logType) + "] " + logMsg
+
+	print(logPack)
+
+	if logBroadcast:
+		serial.writeline(logPack)
+		pass
 	pass

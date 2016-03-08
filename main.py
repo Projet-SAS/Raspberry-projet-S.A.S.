@@ -4,17 +4,13 @@ Partie Raspberry du projet S.A.S. en python.
 """
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-import xbeeInit, processData, var
 import os, sys, time, fcntl, serial
+import core
+from xbeeInit import *
 
 if __name__ == '__main__':
 	temp = 0.0
 	lum = 0.0
-	serial = serialSerial()
-	serial.port = "/dev/ttyUSB0"
-	serial.baudrate = 9600
-	serial.timeout = 1
-	serial.open()
 	fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
 
 	print "[INFOS] Raspberry est ok."
@@ -25,7 +21,7 @@ if __name__ == '__main__':
 		while True:
 			line = serial.readline().decode("utf-8")
 			if line:
-				processData.processData(line)
+				core.processData(line)
 				print("[INFOS] temperature : " + str(temp) + ' C')
 				pass
 			try:
