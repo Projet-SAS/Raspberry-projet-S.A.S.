@@ -6,6 +6,8 @@ import os, sys, time, fcntl, serial
 take data & process it
 """
 def processData(Input):
+	tempRef = 22.0
+	lumRef = 600
 	print("[process] input : " + str(Input))
 	dataIn = Input.split('_')
 	global temp
@@ -16,9 +18,7 @@ def processData(Input):
 
 def logData(logType, logMsg, logBroadcast):
 	logPack = "[" + str(logType) + "] " + str(logMsg)
-
 	print(logPack)
-
 	if logBroadcast:
 		serial.writeline(logPack)
 		pass
