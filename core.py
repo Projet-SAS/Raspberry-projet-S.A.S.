@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-
+import os, sys, time, fcntl, serial
 """processData
 
 take data & process it
@@ -15,7 +15,7 @@ def processData(Input):
 	pass
 
 def logData(logType, logMsg, logBroadcast):
-	logPack = "[" + str(logType) + "] " + logMsg
+	logPack = "[" + str(logType) + "] " + str(logMsg)
 
 	print(logPack)
 
