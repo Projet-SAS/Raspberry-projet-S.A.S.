@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
 import os, sys, time, fcntl, serial
-import core
+import core, frame
 from xbeeInit import *
 
 if __name__ == '__main__':
@@ -9,22 +9,21 @@ if __name__ == '__main__':
 	lum = 0.0
 	fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
 
-	print "[INFOS] Raspberry est ok."
-	serial.writelines("[INFOS] Raspberry est ok.")
-	print "recherche de modules xbee"
+	logData(INFOS, "Raspberry est ok.", True)
+	logData(INFOS, "recherche de modules xbee", False)
 
 	try:
 		while True:
 			line = serial.readline().decode("utf-8")
 			if line:
 				core.processData(line)
-				print("[INFOS] temperature : " + str(temp) + ' C')
+				logData(INFOS, "temperature : " + str(temp) + ' C', False)
 				pass
 			try:
 				linin = sys.stdin.readline()
 				if linin:
 					serial.writelines(linin)
-					print("[output] data send : " + linin)
+					logData(OUTPUT, "data send : " + linin, False)
 					pass
 				pass
 			except Exception, e:
@@ -37,7 +36,7 @@ if __name__ == '__main__':
 	except KeyboardInterrupt:
 		print("\n")
 		print("Key interrupt")
-		serial.writelines("RPI is disconnected.")
+		logData(ERROR, "RPI is disconnected.", True)
 
 	finally:
 		print("script down, please reboot.")
