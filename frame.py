@@ -1,5 +1,5 @@
 import os, sys, time, fcntl, serial
-from tkinter import *
+from Tkinter import *
 # Here come the IHM or UI
 
 def unPetitLog():

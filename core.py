@@ -20,6 +20,6 @@ def logData(logType, logMsg, logBroadcast):
 	logPack = "[" + str(logType) + "] " + str(logMsg)
 	print(logPack)
 	if logBroadcast:
-		serial.writeline(logPack)
+		serial.writeline(str(logPack))
 		pass
 	pass
