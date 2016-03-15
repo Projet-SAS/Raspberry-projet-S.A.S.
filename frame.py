@@ -1,4 +1,4 @@
-import os, sys, time, fcntl, serial
+# import os, sys, time, fcntl, serial
 from Tkinter import *
 # Here come the IHM or UI
 
