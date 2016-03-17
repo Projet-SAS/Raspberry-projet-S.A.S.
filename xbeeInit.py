@@ -1,6 +1,11 @@
-import os, sys, time, fcntl, serial
+import serial as serial
+
 serial = serial.Serial()
+
 serial.port = "/dev/ttyUSB0"
+
 serial.baudrate = 9600
+
 serial.timeout = 1
+
 serial.open()

@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-import os, sys, time, fcntl, serial
+import os
+import sys
+import time
+import fcntl
+import serial
 """processData
 
 take data & process it
@@ -22,4 +26,8 @@ def logData(logType, logMsg, logBroadcast):
 	if logBroadcast:
 		serial.writeline(str(logPack))
 		pass
+	pass
+
+def foo():
+	print("Do something")
 	pass
