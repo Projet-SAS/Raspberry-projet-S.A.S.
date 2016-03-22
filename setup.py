@@ -4,7 +4,7 @@ import os
 import sys
 import time
 import fcntl
-import serial
+import serial as serial
 import frame
 # import xbeeInit
 import core
