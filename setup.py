@@ -16,7 +16,7 @@ serial.open()
 temp = 0.0
 lum = 0.0
 
-# fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
+fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
 SAS.logData("INFOS", "Raspberry en marche.", True)
 SAS.logData("INFOS", "Recherche de modules Xbee", False)
 
@@ -34,7 +34,7 @@ if __name__ == '__main__':
 				lineOut = sys.stdin.readline()
 				if lineOut:
 					serial.writelines(lineOut)
-					SAS.logData("SEND", "Data : ", + lineOut, False)
+					SAS.logData("SEND", "Data : " + str(lineOut), False)
 					pass
 				pass
 			except Exception, e:
