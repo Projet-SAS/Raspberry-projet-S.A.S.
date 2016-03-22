@@ -41,7 +41,7 @@ if __name__ == '__main__':
 	except KeyboardInterrupt:
 		print("\n")
 		print("Key Interrupt")
-		SAS.logData("WARNING", "Le Raspberry est deconnecte")
+		SAS.logData("WARNING", "Le Raspberry est deconnecte", False)
 	finally:
 		print("Script have been stop, please reboot.")
 		pass
