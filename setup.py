@@ -23,12 +23,14 @@ SAS.logData("INFOS", "Recherche de modules Xbee", False)
 if __name__ == '__main__':
 	try:
 		while True:
+			SAS.logData("INFOS", "Recherche d'informations IN", False)
 			lineIn = serial.readline().decode("utf-8")
 			if lineIn:
 				SAS.processData(lineIn)
 				SAS.logData("INFOS", "Temperature : " + str(temp) + 'C', False)
 				pass
 			try:
+				SAS.logData("INFOS", "Recherche d'informations OUT", False)
 				lineOut = sys.stdin.readline()
 				if lineOut:
 					serial.writelines(lineOut)
@@ -37,7 +39,7 @@ if __name__ == '__main__':
 				pass
 			except Exception, e:
 				time.sleep(0.01)
-				# print(e)
+				print(e)
 			finally:
 				lineOut = False
 				pass
