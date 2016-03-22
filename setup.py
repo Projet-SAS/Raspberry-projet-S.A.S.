@@ -18,10 +18,10 @@ if __name__ == '__main__':
 	try:
 		while True:
 			# lineIn = serial.readline().decode("utf-8")
-			if lineIn:
-				SAS.processData(lineIn)
-				SAS.logData("INFOS", "Temperature : " + str(temp) + 'C', False)
-				pass
+			# if lineIn:
+			# 	SAS.processData(lineIn)
+			# 	SAS.logData("INFOS", "Temperature : " + str(temp) + 'C', False)
+			# 	pass
 
 			try:
 				lineOut = sys.stdin.readline()
