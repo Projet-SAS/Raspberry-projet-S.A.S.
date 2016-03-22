@@ -4,7 +4,18 @@ import os
 import sys
 import time
 import fcntl
-import serial
+import serial as serial
+
+serial = serial.Serial()
+
+serial.port = "/dev/ttyUSB0"
+
+serial.baudrate = 9600
+
+serial.timeout = 1
+
+serial.open()
+
 """processData
 
 take data & process it

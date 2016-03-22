@@ -6,7 +6,7 @@ import time
 import fcntl
 import serial
 import frame
-import xbeeInit
+# import xbeeInit
 import core
 
 temp = 0.0
