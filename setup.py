@@ -5,9 +5,9 @@ import sys
 import time
 import fcntl
 import serial
-import core
 import frame
 import xbeeInit
+import core
 
 temp = 0.0
 lum = 0.0
@@ -40,10 +40,10 @@ if __name__ == '__main__':
 				pass
 			pass
 		pass
-	except KeyboardInterrupt:
+    except KeyboardInterrupt:
 		print("\n")
 		print("Key Interrupt")
 		core.logData("WARNING", "Le Raspberry est deconnecte")
-	finally:
+    finally:
 		print("Script have been stop, please reboot.")
 		pass
