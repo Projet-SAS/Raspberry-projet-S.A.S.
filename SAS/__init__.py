@@ -1,19 +1,10 @@
 # -*- coding: utf-8 -*
 #!/usr/bin/env python
-
-import os
-import sys
 import serial as serial
-
-
 serial = serial.Serial()
-
 serial.port = "/dev/ttyUSB0"
-
 serial.baudrate = 9600
-
 serial.timeout = 1
-
 serial.open()
 
 """processData
@@ -33,7 +24,7 @@ def processData(Input):
 
 def logData(logType, logMsg, logBroadcast):
 	logPack = "[" + str(logType) + "] " + str(logMsg)
-	print(logPack)
+	print(str(logPack))
 	if logBroadcast:
 		serial.writelines(str(logPack))
 		pass
