@@ -6,7 +6,15 @@ import time
 import fcntl
 import serial as serial
 import SAS
+serial = serial.Serial()
 
+serial.port = "/dev/ttyUSB0"
+
+serial.baudrate = 9600
+
+serial.timeout = 1
+
+serial.open()
 temp = 0.0
 lum = 0.0
 
@@ -17,12 +25,11 @@ SAS.logData("INFOS", "Recherche de modules Xbee", False)
 if __name__ == '__main__':
 	try:
 		while True:
-			# lineIn = serial.readline().decode("utf-8")
-			# if lineIn:
-			# 	SAS.processData(lineIn)
-			# 	SAS.logData("INFOS", "Temperature : " + str(temp) + 'C', False)
-			# 	pass
-
+			lineIn = serial.readline().decode("utf-8")
+			if lineIn:
+				SAS.processData(lineIn)
+				SAS.logData("INFOS", "Temperature : " + str(temp) + 'C', False)
+				pass
 			try:
 				lineOut = sys.stdin.readline()
 				if lineOut:
