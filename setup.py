@@ -37,9 +37,9 @@ if __name__ == '__main__':
 					SAS.logData("SEND", "Data : " + str(lineOut), False)
 					pass
 				pass
-			except Exception, e:
+			except Exception:
 				time.sleep(0.01)
-				print(e)
+				print(Exception)
 			finally:
 				lineOut = False
 				pass
