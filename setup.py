@@ -17,7 +17,7 @@ SAS.logData("INFOS", "Recherche de modules Xbee", False)
 if __name__ == '__main__':
 	try:
 		while True:
-			line = serial.readline().decode("utf-8")
+			# lineIn = serial.readline().decode("utf-8")
 			if lineIn:
 				SAS.processData(lineIn)
 				SAS.logData("INFOS", "Temperature : " + str(temp) + 'C', False)
