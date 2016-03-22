@@ -6,15 +6,13 @@ import time
 import fcntl
 import serial as serial
 import SAS
+
 serial = serial.Serial()
-
 serial.port = "/dev/ttyUSB0"
-
 serial.baudrate = 9600
-
 serial.timeout = 1
-
 serial.open()
+
 temp = 0.0
 lum = 0.0
 
@@ -39,7 +37,7 @@ if __name__ == '__main__':
 				pass
 			except Exception, e:
 				time.sleep(0.01)
-				print(e)
+				# print(e)
 			finally:
 				lineOut = False
 				pass
