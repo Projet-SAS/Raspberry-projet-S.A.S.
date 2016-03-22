@@ -39,7 +39,7 @@ if __name__ == '__main__':
 				pass
 			except IOError:
 				time.sleep(0.01)
-				print(IOError)
+				continue
 			finally:
 				lineOut = False
 				pass
