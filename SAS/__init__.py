@@ -5,9 +5,9 @@ import sys
 import time
 import fcntl
 import serial as serial
-import .ia as ia
-import .ui as ui
-import .Xbee as com
+from . import ia as ia
+from . import ui as ui
+from . import Xbee as com
 
 serial = serial.Serial()
 serial.port = "/dev/ttyUSB0"
