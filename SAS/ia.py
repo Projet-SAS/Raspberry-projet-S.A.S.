@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 #!/usr/bin/env python
 
-dict userRequest = {"temp": 23, "lumZ1": 500, "lumZ2": 500, "forceLight": False}
+userRequest = {"temp": 23, "lumZ1": 500, "lumZ2": 500, "forceLight": False}
 
 class tortIA:
     """docstring for tortIA"""
