@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*
 #!/usr/bin/env python
 import serial as serial
+import .ia
+import .ui
+import .Xbee
+
 serial = serial.Serial()
 serial.port = "/dev/ttyUSB0"
 serial.baudrate = 9600
