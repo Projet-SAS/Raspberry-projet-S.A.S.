@@ -1,13 +1,32 @@
 import serial as serial
 
-serial = serial.Serial()
-serial.port = "/dev/ttyUSB0"
-serial.baudrate = 9600
-serial.timeout = 1
-serial.open()
+class comXbee:
+	"""docstring for comXbee"""
+	def __init__(self, port = "/dev/ttyUSB0", baudrate = 9600, timeout = 1):
+		super(comXbee, self).__init__()
+		self.port = port
+		self.baudrate = baudrate
+		self.timeout = timeout
 
-def scanNet():
-	lineIn = serial.readline().decode("utf-8")
-	if lineIn:
-		SAS.procressData(lineIn)
-	pass
+		serial = serial.Serial()
+		serial.port = self.port
+		serial.baudrate = self.baudrate
+		serial.timeout = self.timeout
+		serial.open()
+
+	def requestData():
+		dataGet = serial.readline().decode("utf-8")
+		if dataGet:
+			print("YOUHOU")
+			pass
+		else:
+			print("Nope.")
+			pass
+		pass
+
+	def sendData():
+		dataSend = sys.stdin.readline()
+		if dataSend:
+			serial.writeline(dataSend)
+			pass
+		pass
