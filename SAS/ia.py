@@ -7,11 +7,11 @@ class tortIA:
     """docstring for tortIA"""
     def __init__(self, temp, lumZon1, lumZon2, is_somebody, userRequest):
         super(tortIA, self).__init__()
-		self.temp = temp
-		self.lumZon1 = lumZon1
-		self.lumZon2 = lumZon2
-		self.is_somebody = is_somebody
-		self.userRequest = userRequest
+        self.temp = temp
+        self.lumZon1 = lumZon1
+        self.lumZon2 = lumZon2
+        self.is_somebody = is_somebody
+        self.userRequest = userRequest
 
     def diffData(self):
             diffTemp = str("temp:" + str("up" if self.temp < self.userRequest["temp"] else "down" if self.temp > self.userRequest["temp"] else "none"))
