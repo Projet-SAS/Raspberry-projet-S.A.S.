@@ -6,7 +6,6 @@ userRequest = {"temp": 23, "lumZ1": 500, "lumZ2": 500, "forceLight": False}
 class tortIA:
     """docstring for tortIA"""
     def __init__(self, temp, lumZon1, lumZon2, is_somebody, userRequest):
-        # super(tortIA, self).__init__()
         self.temp = temp
         self.lumZon1 = lumZon1
         self.lumZon2 = lumZon2
@@ -19,3 +18,5 @@ class tortIA:
             difflumZon2 = str("lumZon2:" + str("up" if self.lumZon2 < self.userRequest["lumZ2"] else "down" if self.lumZon2 > self.userRequest["lumZ2"] else "none"))
             result = str(diffTemp + "_" + difflumZon1 + "_" + difflumZon2)
             return(result)
+ia = tortIA(22, 500, 480, False, userRequest)
+print ia.diffData()
