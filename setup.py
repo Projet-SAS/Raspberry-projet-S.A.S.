@@ -5,6 +5,7 @@ import sys
 import time
 import fcntl
 import serial as serial
+
 import SAS
 
 serial = serial.Serial()

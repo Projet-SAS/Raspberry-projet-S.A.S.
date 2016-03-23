@@ -14,19 +14,20 @@ class comXbee:
 		serial.timeout = self.timeout
 		serial.open()
 
-	def requestData():
+	def requestData(self):
 		dataGet = serial.readline().decode("utf-8")
 		if dataGet:
-			print("YOUHOU")
+			return dataGet
 			pass
 		else:
 			print("Nope.")
 			pass
 		pass
 
-	def sendData():
-		dataSend = sys.stdin.readline()
-		if dataSend:
-			serial.writeline(dataSend)
-			pass
+	def logData(self, logType, logMsg, logBroadcast):
+			logPack = "[" + str(logType) + "] " + str(logMsg)
+			print(str(logPack))
+			if logBroadcast:
+				serial.writelines(str(logPack))
+				pass
 		pass
