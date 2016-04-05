@@ -32,3 +32,7 @@ class net():
 			print("sended : " + str(raspberryData))
 			pass
 		pass
+
+	def decompose(self):
+		print("decompose")
+		pass

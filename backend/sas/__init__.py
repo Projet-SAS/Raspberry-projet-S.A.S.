@@ -8,7 +8,9 @@ def core():
 	net = xbee.net("/dev/ttyUSB0", 9600, 1) #setup the xbee class
 	try:
 		while True:
-			net.read() # read informations from the arduino
+			if net.read(): # read informations from the arduino
+				net.decompose()
+				pass
 			try:
 				if net.send(): #send data
 					print("it's ok")
