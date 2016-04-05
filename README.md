@@ -1,3 +1,4 @@
 # Projet S.A.S. (Raspberry)
 
-For more informations, see the wiki [here](/wiki).
+see our github page [here](https://Projet-SAS.github.io)
+For more informations, see the wiki [here](https://github.com/Projet-SAS/Raspberry-projet-S.A.S./wiki).
