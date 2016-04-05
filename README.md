@@ -1,9 +1,3 @@
 # Projet S.A.S. (Raspberry)
-___
 
-librairies utilisées :
-* fcntl
-* serial
-* time
-* sys
-* os
+For more informations, see the wiki [here](/wiki).
