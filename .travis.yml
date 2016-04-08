@@ -5,7 +5,6 @@ script: nosetests
 before:
   - pip version
   - python -V
-install:
   - pip install pyserial
   - pip install mysql
   - pip install MySQL-python
