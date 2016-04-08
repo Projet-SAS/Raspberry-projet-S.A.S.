@@ -1,4 +1,0 @@
-pyserial
-mysql
-MySQL-python
-mysql-connector-python
