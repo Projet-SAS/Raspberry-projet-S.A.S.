@@ -1,9 +1,11 @@
 language: python
+sudo: required
 python:
   - "2.7.9"
 before:
   - pip version
   - python -V
+  - pip search python-connector
 install:
   - pip install pyserial
   - pip install mysql
