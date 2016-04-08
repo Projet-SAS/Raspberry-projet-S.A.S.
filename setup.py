@@ -3,9 +3,16 @@
 print('launching sasScript... please wait.')
 from sas import * 
 
+net = Xbee.connect("/dev/ttyUSB0", 9600, 1)
+
 try:
 	while True:
-		pass
+		print("launch loop.")
+		if net.read():
+			net.decompose()
+			pass
+		RaspberryData = database.getRequires()
+		net.send(RaspberryData)
 	pass
 except KeyboardInterrupt:
 	print('\n')

@@ -28,12 +28,9 @@ class connect:
 			pass
 		pass
 
-	def send(self):
-		raspberryData = sys.stdin.readline()
-		if raspberryData:
-			self.arduino.writelines(raspberryData)
-			print("sended : " + str(raspberryData))
-			pass
+	def send(self, data):
+		self.arduino.writelines(data)
+		print("sended : " + str(data))
 		pass
 
 	def decompose(self):
