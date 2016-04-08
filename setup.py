@@ -1,7 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sas
 print('launching sasScript... please wait.')
+from sas import * 
 
-if __name__ == '__main__':
-	sas.core()
+try:
+	while True:
+		pass
+	pass
+except KeyboardInterrupt:
+	print('\n')
+	print("Une interruption est survenue")
+finally:
+	print("OK.")
+	pass
