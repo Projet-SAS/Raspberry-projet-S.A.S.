@@ -8,7 +8,7 @@ import sys
 
 fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
 
-class connect:
+class Connect:
 	"""docstring for connect"""
 	def __init__(self, port, baudrate, timeout):
 		self.port = port
@@ -30,7 +30,7 @@ class connect:
 
 	def send(self, data):
 		self.arduino.writelines(data)
-		print("sended : " + str(data))
+		print("Send : " + str(data))
 		pass
 
 	def decompose(self):

@@ -29,6 +29,6 @@ class db:
 		rows = self.cursor.fetchall()
 		pass
 
-	def getRequires(self):
+	def getrequires(self):
 		print("checking db.")
 		pass
