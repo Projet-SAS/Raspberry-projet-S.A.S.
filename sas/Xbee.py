@@ -9,30 +9,32 @@ import sys
 fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
 
 class Connect:
-	"""docstring for connect"""
-	def __init__(self, port, baudrate, timeout):
-		self.port = port
-		self.baudrate = baudrate
-		self.timeout = timeout
+    """docstring for connect
 
-		self.arduino = serial.Serial(self.port, self.baudrate, timeout=self.timeout)
-		self.arduino.close()
-		self.arduino.open()
-		self.arduino.writelines("connection is open")
 
-	def read(self):
-		print("search data : wait.")
-		arduinoData = self.arduino.readline().decode("utf-8")
-		if arduinoData:
-			print(arduinoData)
-			pass
-		pass
+    """
+    def __init__(self, port, baudrate, timeout):
+        self.port = port
+        self.baudrate = baudrate
+        self.timeout = timeout
+        self.arduino = serial.Serial(self.port, self.baudrate, timeout=self.timeout)
+        self.arduino.close()
+        self.arduino.open()
+        self.arduino.writelines("connection is open")
 
-	def send(self, data):
-		self.arduino.writelines(data)
-		print("Send : " + str(data))
-		pass
+    def read(self):
+        print("search data : wait.")
+        arduinodata = self.arduino.readline().decode("utf-8")
+        if arduinodata:
+            print(arduinodata)
+            pass
+        pass
 
-	def decompose(self):
-		print("decompose")
-		pass
+    def send(self, data):
+        self.arduino.writelines(data)
+        print("Send : " + str(data))
+        pass
+
+    def decompose(self):
+        print("decompose")
+        pass

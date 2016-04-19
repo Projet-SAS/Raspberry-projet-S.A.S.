@@ -1,0 +1,4 @@
+pyserial
+mysql
+MySQL-python
+mysql-connector-python --allow-external mysql-connector-python

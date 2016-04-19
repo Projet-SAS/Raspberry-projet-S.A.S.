@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""docstring for setup
+
+setup du projet S.A.S. Récupère les données envoyées par l'arduino via des radios fréquences,
+il enregistre le tout sur une database puis lit les besoins de l'utilisateur pour l'envoyer à l'arduino.
+"""
+from sas import *
 print('launching sasScript... please wait.')
-from sas import * 
 
 net = Xbee.connect("/dev/ttyUSB0", 9600, 1)
 

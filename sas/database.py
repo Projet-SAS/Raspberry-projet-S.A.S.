@@ -13,22 +13,27 @@ import os, mysql.connector
 # cursor = conn.cursor()
 # conn.close()
 
-class db:
-	"""docstring for db"""
-	def __init__(self, host, user, password, database):
-		self.host = host
-		self.user = user
-		self.password = password
-		self.database = database
+class Database:
+    """ docstring for db
 
-		self.conn = mysql.connector.connect(host=self.host, user=self.user, password=self.password, database=self.database)
-		self.cursor = self.conn.cursor()
 
-	def cursor(self, query):
-		self.cursor.execute(query)
-		rows = self.cursor.fetchall()
-		pass
+    """
+    def __init__(self, host, user, password, database):
+        self.host = host
+        self.user = user
+        self.password = password
+        self.database = database
+        self.conn = mysql.connector.connect(host=self.host, user=self.user, password=self.password, database=self.database)
+        self.cursor = self.conn.cursor()
 
-	def getrequires(self):
-		print("checking db.")
-		pass
+    def cursor(self, query):
+        self.cursor.execute(query)
+        rows = self.cursor.fetchall()
+        pass
+
+    def getrequires(self):
+        print("checking db.")
+        pass
+
+    def __del__(self):
+        self.cursor.close()
