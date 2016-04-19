@@ -13,11 +13,14 @@ import os, mysql.connector
 # cursor = conn.cursor()
 # conn.close()
 
+
 class Database:
+
     """ docstring for db
 
 
     """
+
     def __init__(self, host, user, password, database):
         self.host = host
         self.user = user

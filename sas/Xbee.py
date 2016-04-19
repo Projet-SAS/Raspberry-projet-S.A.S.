@@ -6,13 +6,17 @@ import fcntl
 import os
 import sys
 
+
 fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
 
+
 class Connect:
+
     """docstring for connect
 
 
     """
+
     def __init__(self, port, baudrate, timeout):
         self.port = port
         self.baudrate = baudrate
