@@ -14,11 +14,13 @@ import os, mysql.connector
 # conn.close()
 
 
+# http://stackoverflow.com/questions/372885/how-do-i-connect-to-a-mysql-database-in-python
+
 class Database:
 
     """ docstring for db
 
-
+    
     """
 
     def __init__(self, host, user, password, database):

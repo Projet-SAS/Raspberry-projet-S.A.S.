@@ -5,10 +5,7 @@ python:
 before:
   - pip version
   - python -V
-  - pip search python-connector
 install:
   - pip install pyserial
-  - pip install mysql
-  - pip install MySQL-python
-  - pip install mysql-connector-python-rf
+  - apt-get install python-mysqldb
 script: nosetests

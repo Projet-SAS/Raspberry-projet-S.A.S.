@@ -39,6 +39,12 @@ class Connect:
         print("Send : " + str(data))
         pass
 
-    def decompose(self):
-        print("decompose")
+    def decompose(self, data):
+        process_decompose = data.split('_')
+        for process_decompose in process_decompose:
+            data[][] = process_decompose.split(':')
+            pass
         pass
+
+    del __del__(self):
+        self.arduino.close()
