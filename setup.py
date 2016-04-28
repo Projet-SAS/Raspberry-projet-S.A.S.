@@ -10,7 +10,7 @@ il enregistre le tout sur une database puis lit les besoins de l'utilisateur pou
 from sas import *
 print('launching sasScript... please wait.')
 
-net = Xbee.connect("/dev/ttyUSB0", 9600, 1)
+net = Xbee("/dev/ttyUSB0", 9600, 1)
 
 try:
     while True:
