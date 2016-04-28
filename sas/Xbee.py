@@ -47,5 +47,6 @@ class Connect:
             pass
         pass
 
-    del __del__(self):
+    def __del__(self):
         self.arduino.close()
+        pass
