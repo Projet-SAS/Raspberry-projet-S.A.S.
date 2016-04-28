@@ -18,7 +18,8 @@ try:
         if net.read():
             net.decompose()
         pass
-        RaspberryData = database.getrequires()
+        db = database.Database()
+        RaspberryData = db.getrequires()
         net.send(RaspberryData)
     pass
 except KeyboardInterrupt:
