@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os, mysql.connector
+import os, MySQLdb
 
 # http://apprendre-python.com/page-database-data-base-donnees-query-sql-mysql-postgre-sqlite
 
@@ -28,7 +28,7 @@ class Database:
         self.user = user
         self.password = password
         self.database = database
-        self.conn = mysql.connector.connect(host=self.host, user=self.user, password=self.password, database=self.database)
+        self.conn = MySQLdb.connect(host=self.host, user=self.user, password=self.password, database=self.database)
         self.cursor = self.conn.cursor()
 
     def cursor(self, query):
