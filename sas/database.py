@@ -28,7 +28,7 @@ class Database:
         self.user = user
         self.password = password
         self.database = database
-        self.conn = MySQLdb.connect(host=self.host, user=self.user, password=self.password, db=self.database)
+        self.conn = MySQLdb.connect(host=self.host, user=self.user, passwd=self.password, db=self.database)
         self.cursor = self.conn.cursor()
 
     def cursor(self, query):
