@@ -18,7 +18,7 @@ try:
         if net.read():
             net.decompose()
         pass
-        db = database.Database()
+        db = database.Database("127.0.0.1", "root", "patate", "projetSas")
         RaspberryData = db.getrequires()
         net.send(RaspberryData)
     pass
