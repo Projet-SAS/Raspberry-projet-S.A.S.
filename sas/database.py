@@ -37,7 +37,7 @@ class Database:
         pass
 
     def getrequires(self):
-        print("checking db.")
+        return("checking db.")
         pass
 
     def __del__(self):
