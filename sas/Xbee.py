@@ -42,7 +42,8 @@ class Connect:
     def decompose(self, data):
         process_decompose = data.split('_')
         for process_decompose in process_decompose:
-            data[][] = process_decompose.split(':')
+            # data[][] = process_decompose.split(':')
+            print('hello')
             pass
         pass
 
