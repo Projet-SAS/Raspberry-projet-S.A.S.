@@ -27,7 +27,7 @@ try:
 			cursor.execute("INSERT INTO luminosity(luminosityonezoneone, luminositytwozoneone, luminosityonezonetwo, luminositytwozonetwo) VALUES(`%f`, `%f`, `%f`, `%f`), " % datatable["luminosity"]["zone1sensor1"], datatable["luminosity"]["zone1sensor2"], datatable["luminosity"]["zone2sensor1"], datatable["luminosity"]["zone2sensor2"])
 			pass
 		cursor.execute("SELECT * from requirements ORDER BY idrequirements DESC LIMIT 1")
-		cursor.fetchall()
+		raspberrypidata = cursor.fetchall()
 
 		Xbee.writelines(raspberrypidata)
 		pass
