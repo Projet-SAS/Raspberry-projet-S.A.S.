@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import, serial, fcntl, os, sys, MySQLdb
+import serial, fcntl, os, sys, MySQLdb
 
 fcntl.fcntl(sys.stdin, fcntl.F_SETFL, os.O_NONBLOCK)
 print("launching simpleScript, please wait.")
@@ -22,10 +22,10 @@ try:
 			print("i get : %s", arduinodata)
 			arduinotable = arduinodata.split('\t')
 			for row in arduinotable:
-				cursor.execute("INSERT %s INTO projetSas", arduinotable[])
+				cursor.execute("INSERT %s INTO luminosity", arduinotable)
 				pass
 			pass
-		cursor.execute("SELECT * from projetSas")
+		cursor.execute("SELECT LAST(needs) from requirements")
 		cursor.fetchall()
 
 		Xbee.writelines(raspberrypidata)
