@@ -33,6 +33,7 @@ try:
 		pass
 	pass
 except KeyboardInterrupt:
+	print('\n')
 	print("let me alive, plaise.")
 finally:
 	print("Goodbye.")
