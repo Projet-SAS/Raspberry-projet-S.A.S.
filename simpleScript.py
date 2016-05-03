@@ -19,13 +19,14 @@ try:
 	while True:
 		arduinodata = Xbee.readline().decode("utf-8")
 		if arduinodata:
-			print("i get : %s", arduinodata)
+			print("i get : %s" % arduinodata)
 			arduinotable = arduinodata.split('\t')
-			for row in arduinotable:
-				cursor.execute("INSERT %s INTO luminosity", arduinotable)
-				pass
+			
+			datatable = {"temperature": {"zone1": arduinotable[0], "zone2": arduinotable[2], "outside": arduinotable[3]}, "luminosity": {"zone1sensor1": datatable[4], "zone1sensor2": datatable[5], "zone2sensor1":datatable[6], "zone2sensor2":datatable[7]}, "movement": []}
+
+			cursor.execute("INSERT INTO luminosity(luminosityonezoneone, luminositytwozoneone, luminosityonezonetwo, luminositytwozonetwo) VALUES(`%f`, `%f`, `%f`, `%f`), " % datatable["luminosity"]["zone1sensor1"], datatable["luminosity"]["zone1sensor2"], datatable["luminosity"]["zone2sensor1"], datatable["luminosity"]["zone2sensor2"])
 			pass
-		cursor.execute("SELECT LAST(needs) from requirements")
+		cursor.execute("SELECT * from requirements ORDER BY idrequirements DESC LIMIT 1")
 		cursor.fetchall()
 
 		Xbee.writelines(raspberrypidata)
