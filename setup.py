@@ -6,25 +6,28 @@
 setup du projet S.A.S. Récupère les données envoyées par l'arduino via des radios fréquences,
 il enregistre le tout sur une database puis lit les besoins de l'utilisateur pour l'envoyer à l'arduino.
 """
+import sys
+import sasproject
 
-from sas import *
-print('launching sasScript... please wait.')
 
-net = Xbee.Connect("/dev/ttyUSB0", 9600, 1)
+pythonVersion = str(sys.version_info[0] + '.' + sys.version_info[1] + '.' + sys.version_info[2])
+print("python version: %s" % pythonVersion)
 
-try:
-    while True:
-        print("launch loop.")
-        if net.read():
-            net.decompose()
-        pass
-        db = database.Database("127.0.0.1", "root", "patate", "projetSas")
-        RaspberryData = db.getrequires()
-        net.send(RaspberryData)
-    pass
-except KeyboardInterrupt:
-    print('\n')
-    print("Une interruption est survenue")
-finally:
-    print("OK.")
-    pass
+config = {
+    "name": "projet-S.A.S.",
+    "version": "alpha-3.0",
+    "author": "keikyoku",
+    "author_email": "benjamin.boboul@gmail.com",
+    "repo_url": "https://github.com/Projet-SAS/Raspberry-projet-S.A.S.",
+
+    "dbuser": "root",
+    "dbpass": "patate",
+    "dbhost": "127.0.0.1",
+    "dbname": "projetSas",
+
+    "xbee_port": "/dev/ttyUSB0",
+    "xbee_baudrate": 9600,
+    "xbee_timeout": 1
+}
+
+sasproject.setup(**config)

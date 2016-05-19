@@ -16,25 +16,25 @@ cursor = conn.cursor()
 print("ready to launch the loop.")
 
 try:
-	while True:
-		arduinodata = Xbee.readline().decode("utf-8")
-		if arduinodata:
-			print("i get : %s" % arduinodata)
-			arduinotable = arduinodata.split('\t')
-			
-			datatable = {"temperature": {"zone1": arduinotable[0], "zone2": arduinotable[2], "outside": arduinotable[3]}, "luminosity": {"zone1sensor1": datatable[4], "zone1sensor2": datatable[5], "zone2sensor1":datatable[6], "zone2sensor2":datatable[7]}, "movement": []}
+    while True:
+        arduinodata = Xbee.readline().decode("utf-8")
+        if arduinodata:
+            print("i get : %s" % arduinodata)
+            arduinotable = arduinodata.split('\t')
 
-			cursor.execute("INSERT INTO luminosity(luminosityonezoneone, luminositytwozoneone, luminosityonezonetwo, luminositytwozonetwo) VALUES(`%f`, `%f`, `%f`, `%f`), " % datatable["luminosity"]["zone1sensor1"], datatable["luminosity"]["zone1sensor2"], datatable["luminosity"]["zone2sensor1"], datatable["luminosity"]["zone2sensor2"])
-			pass
-		cursor.execute("SELECT * from requirements ORDER BY idrequirements DESC LIMIT 1")
-		raspberrypidata = cursor.fetchall()
+            datatable = {"temperature": {"zone1": arduinotable[0], "zone2": arduinotable[2], "outside": arduinotable[3]}, "luminosity": {"zone1sensor1": datatable[4], "zone1sensor2": datatable[5], "zone2sensor1":datatable[6], "zone2sensor2":datatable[7]}, "movement": []}
 
-		Xbee.writelines(raspberrypidata[0][1])
-		pass
-	pass
+            cursor.execute("INSERT INTO luminosity(luminosityonezoneone, luminositytwozoneone, luminosityonezonetwo, luminositytwozonetwo) VALUES(`%f`, `%f`, `%f`, `%f`), " % datatable["luminosity"]["zone1sensor1"], datatable["luminosity"]["zone1sensor2"], datatable["luminosity"]["zone2sensor1"], datatable["luminosity"]["zone2sensor2"])
+            pass
+        cursor.execute("SELECT * from requirements ORDER BY idrequirements DESC LIMIT 1")
+        raspberrypidata = cursor.fetchall()
+
+        Xbee.writelines(raspberrypidata[0][1])
+        pass
+    pass
 except KeyboardInterrupt:
-	print('\n')
-	print("let me alive, plaise.")
+    print('\n')
+    print("let me alive, plaise.")
 finally:
-	print("Goodbye.")
-	pass
+    print("Goodbye.")
+    pass
