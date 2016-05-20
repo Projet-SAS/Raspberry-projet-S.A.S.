@@ -10,7 +10,7 @@ import sys
 import sasproject
 
 
-pythonVersion = str(sys.version_info[0] + '.' + sys.version_info[1] + '.' + sys.version_info[2])
+pythonVersion = str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info[2])
 print("python version: %s" % pythonVersion)
 
 config = {
