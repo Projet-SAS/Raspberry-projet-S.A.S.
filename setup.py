@@ -26,8 +26,8 @@ config = {
     "dbname": "projetSas",
 
     "xbee_port": "/dev/ttyUSB0",
-    "xbee_baudrate": 9600,
-    "xbee_timeout": 1
+    "xbee_baudrate": "9600",
+    "xbee_timeout": "1"
 }
 
 sasproject.setup(**config)

@@ -13,7 +13,7 @@ class Arduino(object):
     def __init__(self, ubsport, baudrate, timeout):
         """"""
         print("xbee class")
-        self.Xbee = serial.Serial(ubsport, baudrate, timeout=timeout)
+        self.Xbee = serial.Serial(ubsport, int(baudrate), timeout=int(timeout))
         self.Xbee.close()
         self.Xbee.open()
 
