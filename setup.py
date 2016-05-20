@@ -24,8 +24,8 @@ config = {
     "dbhost": "127.0.0.1",
     "dbname": "projetSas",
     "xbee_port": "/dev/ttyUSB0",
-    "xbee_freq": "9600",
-    "xbee_timeout": "1"
+    "xbee_freq": 9600,
+    "xbee_timeout": 1
 }
 
 sasproject.setup(config)
