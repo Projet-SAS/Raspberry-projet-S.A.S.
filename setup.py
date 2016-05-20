@@ -19,10 +19,12 @@ config = {
     "author": "keikyoku",
     "author_email": "benjamin.boboul@gmail.com",
     "repo_url": "https://github.com/Projet-SAS/Raspberry-projet-S.A.S.",
+
     "dbuser": "root",
     "dbpass": "patate",
     "dbhost": "127.0.0.1",
     "dbname": "projetSas",
+
     "xbee_port": "/dev/ttyUSB0",
     "xbee_freq": 9600,
     "xbee_timeout": 1

@@ -11,5 +11,8 @@ class Process(object):
         print("coucou")
         pass
 
-    def decompose(self):
+    def decompose(self, data_in):
+        pass
+
+    def setsql(self, data_in):
         pass
