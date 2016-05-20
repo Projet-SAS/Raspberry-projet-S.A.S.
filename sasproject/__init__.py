@@ -5,7 +5,7 @@ from .process import *
 def setup(config):
     print(config["author"])
     try:
-        com = Arduino(config["xbee_port"], config["xbee_baudrate"], config["xbee_timeout"])
+        com = Arduino(config["xbee_port"], config["xbee_freq"], config["xbee_timeout"])
         db = Database(config["dbhost"], config["dbuser"], config["dbpass"], config["dbname"])
         while True:
             data_in = com.read()
