@@ -8,4 +8,8 @@
 
 class Process(object):
     def __init__(self):
+        print("coucou")
+        pass
+
+    def decompose(self):
         pass

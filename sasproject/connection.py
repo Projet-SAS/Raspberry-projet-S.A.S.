@@ -7,10 +7,6 @@
 import serial
 import MySQLdb
 
-usbport = "/dev/ttyUBS0"
-baudrate = 9600
-timeout = 1
-
 
 class Arduino(object):
     """Connect to arduino with Xbee"""
