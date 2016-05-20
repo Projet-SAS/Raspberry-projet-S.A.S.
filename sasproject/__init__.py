@@ -4,7 +4,7 @@ import time
 
 
 def setup(config):
-    print(config["author"])
+    print("made by %s" % config["author"])
     try:
         com = Arduino(config["xbee_port"], config["xbee_freq"], config["xbee_timeout"])
         db = Database(config["dbhost"], config["dbuser"], config["dbpass"], config["dbname"])
