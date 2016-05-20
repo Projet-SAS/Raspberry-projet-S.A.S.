@@ -24,9 +24,6 @@ def setup(config):
         del Database
         print("")
     finally:
-        del Arduino
-        del Database
-
         print("script complete")
 
     pass
