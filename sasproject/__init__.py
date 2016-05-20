@@ -20,8 +20,6 @@ def setup(config):
                 pass
 
     except KeyboardInterrupt:
-        del Arduino
-        del Database
         print("")
     finally:
         print("script complete")
