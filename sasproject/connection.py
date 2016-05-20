@@ -23,7 +23,7 @@ class Arduino(object):
         only read, for advanced process use the right class.
 
         """
-        print("[raspberry] sending request")
+        print("[raspberry] reading input")
         arduino_input = self.Xbee.readline().decode("utf-8")
         return arduino_input
 
@@ -31,6 +31,7 @@ class Arduino(object):
         """write output data with rf
         be sure to check your syntax.
         """
+        print("[raspberry] sending request")
         self.Xbee.writelines(data_in)
         pass
 
