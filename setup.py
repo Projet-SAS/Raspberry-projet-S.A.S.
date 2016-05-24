@@ -16,7 +16,7 @@ print("python version: %s" % pythonVersion)
 config = {
     "name": "projet-S.A.S.",
     "version": "alpha-3.0",
-    "author": "keikyoku",
+    "author": "benjamin",
     "author_email": "benjamin.boboul@gmail.com",
     "repo_url": "https://github.com/Projet-SAS/Raspberry-projet-S.A.S.",
 
