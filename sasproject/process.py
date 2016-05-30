@@ -13,7 +13,10 @@ class Process(object):
         pass
 
     def decompose(self, data_in):
-        """"""
+        """Docstrings for decompose (func)
+        input data : 'begin type1:data1_data2_data3\ttype2:data1_data2_data3\t[...] end'
+        output data : [[['type1'], [data1, data2, data3], ['type2"], [data1, data2, ... ]]]
+        """
         if data_in.startswith("begin", beg=0, end=7) and \
                 data_in.startswith("end", beg=(len(data_in)-5), end=len(data_in)):
             data_in = data_in.strip("begin ")
@@ -56,4 +59,7 @@ class Process(object):
 
     def core_choice(self, actual_data, wanted_data):
         """"""
+        if actual_data != wanted_data:
+            print("we need modifications")
+            pass
         pass
